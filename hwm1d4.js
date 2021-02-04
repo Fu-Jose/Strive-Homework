@@ -119,8 +119,9 @@ Write a function "giveMeRandom" which accepts a number n and returns an array co
 
 const giveMeRandom = function () {
     let x = Math.floor((Math.random() * 10) + 1);
+    return x;
 }
-console.log(giveMeRandom)
+console.log(giveMeRandom())
 
 /* WHEN YOU ARE FINISHED
 Commit and push the code to your personal GitHub repository and share the link to your commit in Eduflow.
