@@ -1,0 +1,179 @@
+<html>
+  <head>
+    <title>Cellphone Shopper</title>
+    <script>
+      function changeTitle() {
+        let changeTitle = document.getElementsByTagName('h1');
+        changeTitle.innerText = "Strive hacked this SHOP!";
+        changeTitle.style.color = "red";
+      }
+      function changeBackground() {
+        let changeBackground = document.getElementsByTagName('body');
+        changeBackground.background = "red";
+      }
+      function changeFooter() {
+        let changeFooter = document.getElementsByTagName('footer');
+        changeFooter.innerText = "THIS IS FAKE ADDRESS";
+      }
+    </script>
+    <style>
+      .top-products {
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+      }
+      img {
+        padding: 10px;
+      }
+      .rows {
+        background-color: turquoise;
+      }
+      .price {
+        display: table;
+      }
+      .Cart {
+        width: 35px;
+      }
+      table {
+          margin: auto;
+      }
+      header {
+        text-align: center;
+      }
+      .text-area {
+        text-align: center;
+      }
+      textarea {
+          width: 500px;
+          height: 120px;
+      }
+      footer {
+        text-align: center;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <header>
+        <h1 class="title">Cellphone Shopper</h1>
+      </header>
+    </div>
+    <div id="table">
+      <table id="top-products">
+        <tr class="rows">
+          <th class="columns">Top 5 Smartphones Right NOW</th>
+          <th class="columns">Title</th>
+          <th class="columns">Description</th>
+          <th class="columns">Price</th>
+        </tr>
+        <tr class="rows">
+          <th class="columns">
+            <img
+              src="https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s21-5g-r.jpg"
+            />
+          </th>
+          <th class="columns">Samsung Galaxy S21</th>
+          <th class="columns">
+            6.2 inch AMOLED screen<br />64mpx Triple Camera<br />256gb
+            Storage<br />Octa-Core Processor
+          </th>
+          <th class="columns">
+            €929,00<br /><a
+              href="https://www.amazon.it/dp/B08QVDX8D4/ref=cm_sw_r_tw_dp_R4S8RWV28T3CY0ACCZ1B"
+              target="_blank"
+              ><img
+                class="cart"
+                src="https://www.searchpng.com/wp-content/uploads/2019/02/Shopping-Cart-PNG-Icon.png"
+            /></a>
+          </th>
+        </tr>
+        <tr class="rows">
+          <th class="columns">
+            <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-12.jpg"
+          </th>
+          <th class="columns">iPhone 12</th>
+          <th class="columns">
+            6.1 inch AMOLED screen<br />256 Storage<br />Double Camera
+          </th>
+          <th class="columns">
+            €1109,00<br /><a
+              href="https://www.amazon.it/dp/B08L5SVNZB/ref=cm_sw_r_tw_dp_G3DKWVM5WHPMXMCZ30BR"
+              target="_blank"
+              ><img
+                class="cart"
+                src="https://www.searchpng.com/wp-content/uploads/2019/02/Shopping-Cart-PNG-Icon.png"
+            /></a>
+          </th>
+        </tr>
+        <tr class="rows">
+          <th class="columns">
+            <img src="https://fdn2.gsmarena.com/vv/bigpic/huawei-p30-pro.jpg"
+          </th>
+          <th class="columns">Huawei P30 Pro</th>
+          <th class="columns">
+            6.4 inch AMOLED screen<br />Dual - Sim<br />Octa-core processor<br />Triple
+            Camera by LEICA
+          </th>
+          <th class="columns">
+            €999,00<br /><a
+              href="https://www.amazon.it/dp/B088KS6N6K/ref=cm_sw_r_tw_dp_PVWMKJSD46D31KJSZM1N"
+              target="_blank"
+            ></a
+            ><img
+              class="cart"
+              src="https://www.searchpng.com/wp-content/uploads/2019/02/Shopping-Cart-PNG-Icon.png"
+            />
+          </th>
+        </tr>
+        <tr class="rows">
+          <th class="columns">
+            <img src="https://fdn2.gsmarena.com/vv/bigpic/oneplus-8-pro.jpg"
+          </th>
+          <th class="columns">OnePlus 8 Pro</th>
+          <th class="columns">
+            6.78 inch AMOLED screen<br />Octa-core processor<br />Quadruple
+            Camera<br />256gb Storage<br />4510mAh Battery
+          </th>
+          <th class="columns">
+            €919,00<br /><a
+              href="https://www.amazon.it/dp/B07XYJPGCG/ref=cm_sw_r_tw_dp_HR40KEYSS3PGSEFN7D02"
+              target="_blank"
+              ><img
+                class="cart"
+                src="https://www.searchpng.com/wp-content/uploads/2019/02/Shopping-Cart-PNG-Icon.png"
+            /></a>
+          </th>
+        </tr>
+        <tr class="rows">
+          <th class="columns">
+            <img
+              src="https://fdn2.gsmarena.com/vv/bigpic/google-pixel-5-5g.jpg"
+            />
+          </th>
+          <th class="columns">Google Pixel 5</th>
+          <th class="columns">
+            6.0 OLED Screen<br />16mpx Triple Camera<br />Octa-core processor<br />Full
+            Google Integration
+          </th>
+          <th class="columns">
+            €799,00<br /><a
+              href="https://www.amazon.it/dp/B08JLSQWHD/ref=cm_sw_r_tw_dp_0C8PRX6BW2H6DE4AN5XB"
+              target="_blank"
+              ><img
+                class="cart"
+                src="https://www.searchpng.com/wp-content/uploads/2019/02/Shopping-Cart-PNG-Icon.png"
+            /></a>
+          </th>
+        </tr>
+      </table>
+    </div>
+    <div class="text-area">
+      <p>Comments? Suggestions? Write them here:</p>
+      <textarea id="comments"></textarea><br /><br />
+      <button type="submit" id="submit" class="submit-button">Submit</button>
+    </div>
+    <br />
+    <footer>Via della Madonnina 69, Venezia<br />CELLPHONE SHOPPER</footer>
+  </body>
+</html>
