@@ -10,7 +10,7 @@
       img {
         padding: 10px;
       }
-      .rows {
+      table tr.rows-1 {
         background-color: turquoise;
       }
       .price {
@@ -19,9 +19,14 @@
       .Cart {
         width: 35px;
       }
-      table {
+      table, th, td {
           margin: auto;
-          width: 80%;
+          border-style: solid;
+          border-color: black;
+          border-collapse: collapse;
+      }
+      table{
+        width: 80%;
       }
       header {
         text-align: center;
@@ -47,7 +52,7 @@
     </div>
     <div id="table">
       <table id="top-products">
-        <tr class="rows">
+        <tr class="rows-1">
           <th class="columns">Top 5 Smartphones Right NOW</th>
           <th class="columns">Title</th>
           <th class="columns">Description</th>
@@ -55,7 +60,7 @@
         </tr>
         <tr class="rows">
           <th class="columns">
-            <img
+            <img class="product-img"
               src="https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s21-5g-r.jpg"
             />
           </th>
@@ -76,7 +81,7 @@
         </tr>
         <tr class="rows">
           <th class="columns">
-            <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-12.jpg"
+            <img class="product-img" src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-12.jpg"
           </th>
           <th class="columns">iPhone 12</th>
           <th class="columns">
@@ -94,7 +99,7 @@
         </tr>
         <tr class="rows">
           <th class="columns">
-            <img src="https://fdn2.gsmarena.com/vv/bigpic/huawei-p30-pro.jpg"
+            <img class="product-img" src="https://fdn2.gsmarena.com/vv/bigpic/huawei-p30-pro.jpg"
           </th>
           <th class="columns">Huawei P30 Pro</th>
           <th class="columns">
@@ -114,7 +119,7 @@
         </tr>
         <tr class="rows">
           <th class="columns">
-            <img src="https://fdn2.gsmarena.com/vv/bigpic/oneplus-8-pro.jpg"
+            <img class="product-img" src="https://fdn2.gsmarena.com/vv/bigpic/oneplus-8-pro.jpg"
           </th>
           <th class="columns">OnePlus 8 Pro</th>
           <th class="columns">
@@ -134,7 +139,7 @@
         <tr class="rows">
           <th class="columns">
             <img
-              src="https://fdn2.gsmarena.com/vv/bigpic/google-pixel-5-5g.jpg"
+            class="product-img" src="https://fdn2.gsmarena.com/vv/bigpic/google-pixel-5-5g.jpg"
             />
           </th>
           <th class="columns">Google Pixel 5</th>
@@ -174,6 +179,13 @@
       function changefooter(){
         let myfooter = document.getElementsByTagName('footer')[0]
         myfooter.innerText = "THIS IS A FAKE ADDRESS"
+      }
+      function addCss(){
+        let newClass = document.getElementsByTagName('a')[0]
+        newClass.classList.add("test")
+      }
+      function invisible(){
+        document.getElementsByClassName('product-img').style.display = 'none';
       }
       </script>
   </body>
