@@ -21,6 +21,7 @@
       }
       table {
           margin: auto;
+          width: 80%;
       }
       header {
         text-align: center;
@@ -64,7 +65,7 @@
             Storage<br />Octa-Core Processor
           </th>
           <th class="columns">
-            €929,00<br /><a
+            <p class="prices">€929,00</p><br /><a
               href="https://www.amazon.it/dp/B08QVDX8D4/ref=cm_sw_r_tw_dp_R4S8RWV28T3CY0ACCZ1B"
               target="_blank"
               ><img
@@ -82,7 +83,7 @@
             6.1 inch AMOLED screen<br />256 Storage<br />Double Camera
           </th>
           <th class="columns">
-            €1109,00<br /><a
+            <p class="prices">€1109,00</p><br /><a
               href="https://www.amazon.it/dp/B08L5SVNZB/ref=cm_sw_r_tw_dp_G3DKWVM5WHPMXMCZ30BR"
               target="_blank"
               ><img
@@ -101,7 +102,7 @@
             Camera by LEICA
           </th>
           <th class="columns">
-            €999,00<br /><a
+            <p class="prices">€999,00</p><br /><a
               href="https://www.amazon.it/dp/B088KS6N6K/ref=cm_sw_r_tw_dp_PVWMKJSD46D31KJSZM1N"
               target="_blank"
             ></a
@@ -121,7 +122,7 @@
             Camera<br />256gb Storage<br />4510mAh Battery
           </th>
           <th class="columns">
-            €919,00<br /><a
+            <p class="prices">€919,00</p><br /><a
               href="https://www.amazon.it/dp/B07XYJPGCG/ref=cm_sw_r_tw_dp_HR40KEYSS3PGSEFN7D02"
               target="_blank"
               ><img
@@ -142,7 +143,7 @@
             Google Integration
           </th>
           <th class="columns">
-            €799,00<br /><a
+            <p class="prices">€799,00</p><br /><a
               href="https://www.amazon.it/dp/B08JLSQWHD/ref=cm_sw_r_tw_dp_0C8PRX6BW2H6DE4AN5XB"
               target="_blank"
               ><img
@@ -161,19 +162,19 @@
     <br />
     <footer>Via della Madonnina 69, Venezia<br />CELLPHONE SHOPPER</footer>
     <script>
-        function changeTitle() {
-          let changeTitle = document.getElementsByTagName('h1');
-          changeTitle.innerText = "Strive hacked this SHOP!";
-          changeTitle.style.color = "red";
-        }
-        function changeBackground() {
-          let changeBackground = document.getElementsByTagName('body');
-          changeBackground.background = "red";
-        }
-        function changeFooter() {
-          let changeFooter = document.getElementsByTagName('footer');
-          changeFooter.innerText = "THIS IS FAKE ADDRESS";
-        }
+      function changetitle(){
+        let myHeading = document.getElementsByTagName('h1')[0]
+        myHeading.style.color = 'red'
+        myHeading.innerText = "Strive hacked this shop"
+      }
+      function changebackground(){
+        let myBackground = document.getElementsByTagName('body')[0]
+        myBackground.style.background = "red"
+      }
+      function changefooter(){
+        let myfooter = document.getElementsByTagName('footer')[0]
+        myfooter.innerText = "THIS IS A FAKE ADDRESS"
+      }
       </script>
   </body>
 </html>
