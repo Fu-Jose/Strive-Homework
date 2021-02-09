@@ -27,8 +27,8 @@
       */
 
       function changePcontent(){
-        let newParagraph = document.querySelector("section", "p")
-        newParagraph.innerHTML ="THIS IS THE NEW IMPROVED P"
+        let newParagraph = document.querySelector("section p")
+        newParagraph.innerText ="THIS IS THE NEW IMPROVED P"
       }
 
       /* EXERCISE 4
@@ -45,6 +45,7 @@
         let newUrl = document.querySelectorAll("a")
         for (let i = 0; i < newUrl.length; i++) {
             newUrl[i].href = "https://www.google.com"
+            newUrl[i].innerText = "This link is now owned by Alphabet Inc."
         }
       }
 
@@ -111,7 +112,7 @@
       */
 
       function changeFooterText(){
-        newFooterText = document.querySelector("footer", "p")
+        newFooterText = document.querySelector("footer p")
         newFooterText.onclick = function(){
             newFooterText.innerText = "Clicking on the footer changes the text"
         }
