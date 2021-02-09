@@ -1,0 +1,227 @@
+<!-- saved from url=(0433)https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/879288649414738.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2TAWW44RDWPS6YGR%2F20210209%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210209T135726Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27D7.html&X-Amz-Signature=67ccda16b486cfc2919043da99e6338e9fa74ca0e837fbfe76efd565c0d680e0 -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+    <script>
+      /* EXERCISE 1
+      Write a function for changing the title of the document in something else.
+      */
+
+      function changeTitle(newTitle){
+        let myTitle = document.getElementsByTagName("h1")[0]
+        myTitle.innerText = "THIS IS THE NEW TITLE"
+      }
+
+      /* EXERCISE 2
+      Write a function for changing the class of the title of the page in "myHeading".
+      */
+
+      function addClassToTitle(){
+        let addClass = document.getElementsByTagName("h2")[0]
+        addClass.setAttribute("class", "myHeading")
+        console.log(addClass.classList)
+      }
+
+      /* EXERCISE 3
+      Write a function for changing the text of only the p which are children of a div.
+      */
+
+      function changePcontent(){
+        let newParagraph = document.querySelector("section", "p")
+        newParagraph.innerHTML ="THIS IS THE NEW IMPROVED P"
+      }
+
+      /* EXERCISE 4
+      Write a function for changing the destination of every link to https://www.google.com
+      */
+
+      function changeUrls() {
+        let newUrl = document.querySelector("a")
+            newUrl.href = "https://www.google.com"
+            newUrl.innerText = "This link goes to Google"
+            console.log(newUrl)
+      }
+
+       /* EXERCISE 5
+       Write a function for adding a new item in the second list.
+       */
+
+      function addToTheSecond(content){
+        newListItem = document.createElement("li")
+        newListItem.innerText = "4th"
+        secondList.appendChild(newListItem)
+      }
+
+      /* EXERCISE 6
+      Write a function for adding a second paragraph to the section.
+      */
+
+      function addParagraph(content){
+        newParagraph2= document.createElement("p")
+        newParagraph2.innerText = "New paragraph in second section"
+        secondsection = document.getElementsByTagName("section")[1]
+        secondsection.appendChild(newParagraph2)
+      }
+
+      /* EXERCISE 7
+      Write a function for making the first UL disappear.
+      */
+
+      function firstUlDisappear() {
+        document.getElementById("firstList").style.display = "none"
+      }
+
+      /* EXERCISE 8
+      Write a function for making the background of every UL green.
+      */
+
+      function paintItGreen(){
+        let painter = document.getElementsByTagName("ul")
+        for (let i = 0; i < painter.length; i++) {
+            painter[i].style.backgroundColor = "green"
+        }
+      }
+
+      /* EXERCISE 9
+      Make the heading of the page change color every time the user clicks on it.
+      */
+
+      function makeItClickable(){
+        let clickable = document.getElementsByTagName("h1")[0]
+        clickable.onclick = function () {
+            let r = getRandomInt(0, 255);
+            let g = getRandomInt(0, 255);
+            let b = getRandomInt(0, 255);
+            clickable.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+        }
+      }
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      
+      /* EXERCISE 10
+      Change the footer text with something else when the user clicks on it.
+      */
+
+      function changeFooterText(){
+        newFooterText = document.querySelector("footer", "p")
+        newFooterText.onclick = function(){
+            newFooterText.innerText = "Clicking on the footer changes the text"
+        }
+      }
+
+      /* EXERCISE 11
+      Attach an event listener to the input field in the page for console logging its value just after any keystroke.
+      */
+      function keyLogger(){
+        const inputField = document.getElementById('input-field')
+        inputField.onkeydown = showLog
+      }
+      function showLog(){
+          const inputField = document.getElementById('input-field')
+          console.log(inputField.value)
+      }
+      //THIS CAN BE IMPROVED SO IT SHOWS THE KEY PRESSED IN THAT MOMENT***
+
+      /* EXERCISE 12
+      Create a new welcome alert message when the page successfully loads.
+      */
+
+      window.onload = function(){
+        alert('Welcome to Strive')
+      }
+
+      /* EXERCISE 13
+      Use HTML5 tags to sectionide the content of the page in a more semantic way.
+      */
+    </script>
+
+    <style>
+      .myHeading {
+        color: red;
+      }
+    </style>
+    <script data-dapp-detection="">
+      !(function () {
+        let e = !1;
+        function n() {
+          if (!e) {
+            const n = document.createElement("meta");
+            (n.name = "dapp-detected"), document.head.appendChild(n), (e = !0);
+          }
+        }
+        if (window.hasOwnProperty("ethereum")) {
+          if (
+            ((window.__disableDappDetectionInsertion = !0),
+            void 0 === window.ethereum)
+          )
+            return;
+          n();
+        } else {
+          var t = window.ethereum;
+          Object.defineProperty(window, "ethereum", {
+            configurable: !0,
+            enumerable: !1,
+            set: function (e) {
+              window.__disableDappDetectionInsertion || n(), (t = e);
+            },
+            get: function () {
+              if (!window.__disableDappDetectionInsertion) {
+                const e = arguments.callee;
+                (e &&
+                  e.caller &&
+                  e.caller.toString &&
+                  -1 !== e.caller.toString().indexOf("getOwnPropertyNames")) ||
+                  n();
+              }
+              return t;
+            },
+          });
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>This is the title of the page</h1>
+      <h2>This is the subtitle of the page</h2>
+    </header>
+
+    <article>
+      <hr />
+
+      <ul id="firstList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <ul id="secondList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <a
+        href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/strive.school"
+        >This link goes to Strive School</a
+      >
+
+      <section>
+        <p>This text is just for the exercise</p>
+      </section>
+
+      <section>
+        <input
+          type="text"
+          id="input-field"
+          placeholder="input field for the exercise"
+        />
+      </section>
+    </article>
+
+    <footer>
+      <p>And this text is just for the exercise too!</p>
+    </footer>
+  </body>
+</html>
