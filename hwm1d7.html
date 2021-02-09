@@ -35,12 +35,19 @@
       Write a function for changing the destination of every link to https://www.google.com
       */
 
+      // function changeUrls() {
+        // let newUrl = document.querySelector("a")
+        //     newUrl.href = "https://www.google.com"
+        //     newUrl.innerText = "This link goes to Google"
+        //     console.log(newUrl)
+      // }
       function changeUrls() {
-        let newUrl = document.querySelector("a")
-            newUrl.href = "https://www.google.com"
-            newUrl.innerText = "This link goes to Google"
-            console.log(newUrl)
+        let newUrl = document.querySelectorAll("a")
+        for (let i = 0; i < newUrl.length; i++) {
+            newUrl[i].href = "https://www.google.com"
+        }
       }
+
 
        /* EXERCISE 5
        Write a function for adding a new item in the second list.
