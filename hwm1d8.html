@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+    <!-- EXERCISE 1:
+    Specify the title, the charset (UTF-8) and the viewport of the page.
+    -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M1-D8-Homework</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <style>
+      /* EXERCISE 2:  
+       Create a CSS class for the task list with a diverse background
+       Create a CSS class for the task list item with a border, a bold text and a bigger font size
+       Style every button of the page to be bigger
+    */
+        * {
+            font-family: 'Fredericka the Great', cursive;
+        }
+        body {
+            background-image: url("https://howtonestforless.com/wp-content/uploads/2013/01/Chalkboard-background.jpg");
+            background-repeat: no-repeat;
+            background-size: auto;
+        }
+        h1, span, ul, li {
+            color: white
+        }
+        ul {
+            border: 5px solid white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .button {
+            width: 140px;
+            height: 50px;
+        }
+        #newTask {
+            width: 140px;
+            height: 30px;
+        }
+        #colorPicker{
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+    <script data-dapp-detection="">
+      !(function () {
+        let e = !1;
+        function n() {
+          if (!e) {
+            const n = document.createElement("meta");
+            (n.name = "dapp-detected"), document.head.appendChild(n), (e = !0);
+          }
+        }
+        if (window.hasOwnProperty("ethereum")) {
+          if (
+            ((window.__disableDappDetectionInsertion = !0),
+            void 0 === window.ethereum)
+          )
+            return;
+          n();
+        } else {
+          var t = window.ethereum;
+          Object.defineProperty(window, "ethereum", {
+            configurable: !0,
+            enumerable: !1,
+            set: function (e) {
+              window.__disableDappDetectionInsertion || n(), (t = e);
+            },
+            get: function () {
+              if (!window.__disableDappDetectionInsertion) {
+                const e = arguments.callee;
+                (e &&
+                  e.caller &&
+                  e.caller.toString &&
+                  -1 !== e.caller.toString().indexOf("getOwnPropertyNames")) ||
+                  n();
+              }
+              return t;
+            },
+          });
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <h1>Welcome to your personal Task List!</h1>
+    <br />
+
+    <span
+      >You can add any task you like by writing it in the specified field and
+      then press "Add new task"</span
+    ><br /><br />
+
+    <input type="text" id="newTask" />
+    <input type="button" class="button" value="Add new Task" onclick="addnewTask()" />
+
+    <!-- EXERCISE 3
+        Create a button "Remove Last Task" to trigger the method "removeLast"
+        -->
+    <input type="button" class="button" value="Remove Last Task" onclick="removeLastTask()" />
+    <!-- EXERCISE 4
+        Create a button "Remove First Task" to trigger the method "removeFirst"
+        -->
+    <input type="button" class="button" value="Remove First Task" onclick="removeFirstTask()" />
+    <ul id="myTaskList"></ul>
+
+    <hr />
+
+    <input type="color" placeholder="Color" id="colorPicker" />
+    <input
+      type="button" class="button"
+      value="Change task background"
+      onclick="changeTaskBackgroundColor()"
+    />
+
+    <hr />
+
+    <input type="button" class="button" value="Sort" onclick="bubblesort()" />
+
+    <script>
+      /* EXERCISE 5: 
+          Add a new task to the list.
+          Suggestion:
+          - Use document.getElementById to get the UL item and the input text
+          - Use the document.createElement to create the new List Item
+          - Append the child to the UL
+      */
+        function addnewTask (){
+            const task = document.getElementById("newTask")
+            console.log(task.value)
+            if (task.value!==""){const taskItem = document.createElement("li")
+            taskItem.innerText = task.value
+            console.log(taskItem)
+            myTaskList.appendChild(taskItem)
+            }
+        }
+      /* EXERCISE 6: 
+          Create a method "removeLast" which removes the last item from the task list
+      */
+         function removeLastTask() {
+            const list = document.getElementById("myTaskList");
+            const listItems = list.getElementsByTagName("li");
+            const last = listItems[listItems.length-1];
+            list.removeChild(last);
+        }
+      /* EXERCISE 7: 
+          Create a method "removeFirst" which removes the first item from the task list
+      */
+        function removeFirstTask() {
+            const list = document.getElementById("myTaskList");
+            const listItems = list.getElementsByTagName("li");
+            const first = listItems[0];
+            list.removeChild(first);
+        }
+      /* EXERCISE 8: 
+          Create a method "getTasksAsArray" which returns (and print to the console) an array containing the tasks as string
+      */
+        function getTasksAs() {
+            const list = document.getElementById("myTaskList");
+            const listItems = list.getElementsByTagName("li");
+            const array = listItems.from(HTMLCollection)
+            console.log(array)
+        }           //DOESNT WORK
+      /* EXERCISE 9:
+          Create a method "changeTaskBackgroundColor" which takes the color from the color picker with an 
+          onchange event listener ad applies it as background to every list item
+      */
+
+      /* EXTRA */
+
+      /* EXERCISE 10: 
+          Create a method "bubbleSort()" which sort the task list alphabetically using the bubble sort algorithm
+      
+          Use your spare time to beautify your task list with CSS.
+
+          Suggestion:
+          - Break the code into many function for semplicity 
+          - Reuse the functions previously created
+      */
+    </script>
+  </body>
+</html>
