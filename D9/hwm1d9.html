@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TOMBOLA ITALIANA</title>
-        <link rel="stylesheet" href="tombola.css">
+        <link rel="stylesheet" href="tombola - Copy.css">
     </head>
     <body>
         <h1>BENVENUTO SU TOMBOLA</h1>
@@ -65,9 +65,10 @@
             document.getElementById("drawNumber").innerText=random
             const numberCards = document.getElementsByTagName("h2")
             for (let i = 0; i < numberCards.length;i++){
-                if (numberCards[i].innerText === random){
+                let x = parseInt(numberCards[i].innerText)
+                if (x === random){
                     numberCards[i].style.backgroundColor = "red"
-                }
+                }   console.log(numberCards[i].innerText)
             }
         }
 
