@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TOMBOLA ITALIANA</title>
+        <link rel="stylesheet" href="tombola.css">
+    </head>
+    <body>
+        <h1>BENVENUTO SU TOMBOLA</h1>
+        <div id="intro">
+            <ul id="rules">RULES
+                <li>Every card has 15 random numbers</li>
+                <li>A random number will be selected from the bag</li>
+                <li>Each time the random number is found in your card, it will be marked</li>
+                <li>Mark two or more numbers on the SAME row in your card and you will win a prize</li>
+            </ul>
+            <ul id="prizes">PRIZES
+                <li>AMBO: two numbers, same row.</li>
+                <li>TERNA: three numbers, same row.</li>
+                <li>QUATERNA: four numbers, same row.</li>
+                <li>CINQUINA: five numbers, same row.</li>
+                <li>TOMBOLA: all fifteen numbers in your card.</li>
+            </ul>
+        </div>
+        <div id="startButton">
+            <input type="number" id="cards" placeholder="How many cards?">
+            <input type="button" id="start" value="START!" onclick="startGame()">
+        </div>
+        <div id="container">
+        </div>
+        <div id="goNumber" style="display: none">
+            <input type="button" id="go" value="GO!" onclick="numberDrawn()">
+        </div>
+        <div id="drawNumber" style="display: none">
+            <input type="text">
+        </div>
+    </body>
+    <script>
+        const startGame = function(){
+            document.getElementById("goNumber").style.display = "block"
+            document.getElementById("drawNumber").style.display = "block"
+            const numberCards = document.getElementById("cards").value
+            document.getElementById("intro").style.display = "none";
+            document.getElementById("startButton").style.display = "none";
+            const container = document.getElementById("container")
+            for (let i = 0; i < numberCards; i++){
+                const card = document.createElement("div")
+                card.classList.add("card")
+                console.log(card)
+                for (let i = 0; i < 15; i++){
+                    child = document.createElement("div")
+                    const number = document.createElement("h2")
+                    number.innerText = numberRandom()
+                    child.appendChild(number)
+                    card.appendChild(child)
+                    container.appendChild(card)
+                }   
+            }
+        } 
+
+        const numberDrawn = function(){
+            const random = numberRandom();
+            const checkNumber = random
+            document.getElementById("drawNumber").innerText=random
+            const numberCards = document.getElementsByTagName("h2")
+            for (let i = 0; i < numberCards.length;i++){
+                if (numberCards[i].innerText === random){
+                    numberCards[i].style.backgroundColor = "red"
+                }
+            }
+        }
+
+        function numberRandom() {
+            return Math.floor(Math.random() * (90 - 1) + 1);
+        }
+    </script>
+</html>
