@@ -55,7 +55,7 @@
         }
       }
 
-      h1{
+      div div h1{
         background-color: green;
       }
 
@@ -362,8 +362,8 @@
           <!-- /.blog-post -->
 
           <nav class="blog-pagination">
-            <a class="btn btn-outline-primary" href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/804882096694464.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA2TAWW44RDWPS6YGR%2F20210223%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210223T124930Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27D7.html&amp;X-Amz-Signature=b4e1f45637945b9184cf1ef9fefac429942aedfa8225d960a59f0170192ed313#">Older</a>
-            <a class="btn btn-outline-secondary disabled" href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/804882096694464.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA2TAWW44RDWPS6YGR%2F20210223%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210223T124930Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27D7.html&amp;X-Amz-Signature=b4e1f45637945b9184cf1ef9fefac429942aedfa8225d960a59f0170192ed313#" tabindex="-1" aria-disabled="true">Newer</a>
+            <a class="btn btn-outline-primary" >Older</a>
+            <a class="btn btn-outline-secondary">Newer</a>
           </nav>
         </div>
         <!-- /.blog-main -->
@@ -455,27 +455,57 @@
         document.getElementsByClassName("list-unstyled")[1].remove("li")
       }
 
+      const changeColSize = () => {
+        [...document.querySelectorAll(".col-md-6")].forEach((col) => {
+          col.classList.remove("col-md-6");
+          col.classList.add("col-md-12");
+        });
+      };
+
+
       const removeIcon = function () {
         document.getElementsByTagName("svg")[0].remove()
       }
 
-      const trimText = function () {
-        let p = document.getElementsByTagName("p")[0]
-        let newP = p.substring(0, 50)
-        return newP
+      const trimText = () => {
+        const el = document.querySelectorAll(".blog-main > .blog-post > p:nth-child(3)");
+
+        el.forEach((p) => {
+          p.innerText = p.innerText.substring(0, 50);
+        });
+      };
+
+      function addNewPost() {
+        let newP = document.createElement("div")
+        newP.classList.add("blog-post")
+        let newD = document.createElement("h2")
+        newD.classList.add("blog-post-title")
+        newP.appendChild(newD)
+        newD.innerText = "NEW POST MALONE"
+        document.querySelector(".blog-main").insertBefore(newP, document.querySelector(".blog-main").childNodes[2])
+        console.log(newP)
       }
 
-      let button = document.getElementsByClassName("btn-outline-secondary").addEventListener("click", function(){
-        newPost = document.createElement("div").classList.add("blog-post")
-        document.createElement("h2").classList.add("blog-post-title").innerText="NEW POST"
-        newPost.appendChild(h2)
-        document.getElementsByClassName("blog-main").appendChild(newPost)
-        return newPost
-      });
+      const newbtn = document.querySelector(".blog-pagination > .btn-outline-secondary")
+      newbtn.addEventListener("click", addNewPost)
 
-      const hoverAuthor = function () {
-        
+      function removeOldest() {
+        const oldestPost = document.querySelector(".blog-post:last-of-type")
+        oldestPost.remove()
       }
+
+      const oldbtn = document.querySelector(".btn-outline-primary")
+      oldbtn.addEventListener("click", removeOldest)
+
+      function goalert() {
+        alert(`You have challenged the gods`)
+      }
+
+      const author = document.querySelectorAll("p.blog-post-meta > a")
+      author.forEach(author => {
+        author.addEventListener("mouseover", goalert)
+      })
+      
     </script>
   
 
