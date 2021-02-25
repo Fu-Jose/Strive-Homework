@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Hello, world!</title>
+  </head>
+  <style>
+      body {
+          background-color: rgb(89, 218, 89);
+      }
+      .jumbotron {
+          background-image: url("cool-background.png");
+      }
+      .card {
+          background-image: url("cool-background.png");
+          background-position: center;
+      }
+      .table {
+          display: none;
+      }
+      .tbody td:last-child::after {
+        content: " <- BORING";
+        color: red;
+      }
+  </style>
+  <body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">Home</li>
+        </ol>
+      </nav>
+    <div class="container mx-auto">
+      <div class="jumbotron">
+        <h1 class="display-4 text-center">Ciao, Strivers!</h1>
+        <p class="lead text-center">This is a random text, written randomly.</p>
+        <div class="container d-flex">
+            <img class="img-fluid rounded mx-auto" src="https://placehold.it/300x150">
+        </div>
+    </div>
+    <div class="container-fluid">
+        <button type="button section" class="btn btn-primary my-3">Favorites</button>
+        <div class="row d-flex mx-auto">
+            <div id ="queen" class="card col mx-3">
+                <img src="https://img.discogs.com/_ytjEG_B-jz98HuW8lQE6tvyYyc=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-376152-1124751661.jpg.jpg" class="card-img-top">
+                <div class="card-body">
+                  <p class="card-text">QUEEN</p>
+                  <p class="card-text">GREATEST HITS</p>
+                  <span class="badge badge-secondary">ROCK</span>
+                </div>
+              </div>
+              <div id ="impala" class="card col mx-3">
+                <img src="https://img.discogs.com/TH3722IESsHH9YyVXkLFhgTRDyA=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7268943-1437635726-4759.jpeg.jpg" class="card-img-top">
+                <div class="card-body">
+                  <p class="card-text">TAME IMPALA</p>
+                  <p class="card-text">CURRENTS</p>
+                  <span class="badge badge-secondary">INDIE</span>
+                  <span class="badge badge-secondary">R&B</span>
+                  <span class="badge badge-secondary">PSY-POP</span>
+                </div>
+              </div>
+              <div id ="floyd" class="card col mx-3">
+                <img src="https://img.discogs.com/eyMibZ7PzBb2m4dBG9NzmLJITD8=/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6184733-1538328758-2997.jpeg.jpg" class="card-img-top">
+                <div class="card-body">
+                  <p class="card-text">PINK FLOYD</p>
+                  <p class="card-text">DARKSIDE OF THE MOON</p>
+                  <span class="badge badge-secondary">ROCK</span>
+                  <span class="badge badge-secondary">PROG-ROCK</span>
+                </div>
+              </div>
+              <div id ="rage" class="card col mx-3">
+                <img src="https://img.discogs.com/niu4F-B9BrpcoW0cQ_MOZiN_LoE=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-367339-1259236115.jpeg.jpg" class="card-img-top">
+                <div class="card-body">
+                  <p class="card-text">RAGE AGAINST THE MACHINE</p>
+                  <p class="card-text">RAGE AGAINST THE MACHINE</p>
+                  <span class="badge badge-secondary">HARD-ROCK</span>
+                  <span class="badge badge-secondary">RAP-ROCK</span>
+                </div>
+              </div>
+        </div>
+        <button type="button section" class="btn btn-primary my-3">TRACKLIST</button>
+        <div class="row d-flex mx-auto">
+            <table class="table table-light">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Last</th>
+                  </tr>
+                </thead>
+                <tbody class="tbody">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">9</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">11</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">12</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">13</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">14</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">15</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">16</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">17</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-light">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Last</th>
+                  </tr>
+                </thead>
+                <tbody class="tbody">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">9</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">11</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">12</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">13</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-light">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Last</th>
+                  </tr>
+                </thead>
+                <tbody class="tbody">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">9</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  
+                </tbody>
+              </table>
+              <table class="table table-light">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Last</th>
+                  </tr>
+                </thead>
+                <tbody class="tbody">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">9</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>                    
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+    </div>
+    <footer class="footer container-fluid mx-auto">
+        <div class="container row d-flex flex-column text-center">
+            <h1>CONTACT US</h1>
+            <div class="input-group col-6 mx-auto">
+                <div class="input-group-prepend flex-column">
+                  <span class="input-group-text" id="">Name</span>
+                  <input type="text" class="form-control">
+                  <span class="input-group-text" id="">Email</span>
+                  <input type="text" class="form-control">
+                  <textarea class="form-control"></textarea>
+                </div>
+              </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script>
+        let queen = document.getElementById("queen")
+        queen.addEventListener("click", showtrack1);
+        let track1 = document.getElementsByClassName("table")[0]
+        function showtrack1() {
+                track1.style.display = "table"
+        }
+        let impala = document.getElementById("impala")
+        impala.addEventListener("click", showtrack2);
+        let track2 = document.getElementsByClassName("table")[1]
+        function showtrack2() {
+                track2.style.display = "table"
+        }
+        let floyd = document.getElementById("floyd")
+        floyd.addEventListener("click", showtrack3);
+        let track3 = document.getElementsByClassName("table")[2]
+        function showtrack3() {
+                track3.style.display = "table"
+        }
+        let rage = document.getElementById("rage")
+        rage.addEventListener("click", showtrack4);
+        let track4 = document.getElementsByClassName("table")[3]
+        function showtrack4() {
+                track4.style.display = "table"
+        }
+    </script>
+  </body>
+</html>
