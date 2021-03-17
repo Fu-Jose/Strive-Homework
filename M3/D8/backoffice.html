@@ -46,7 +46,7 @@
     <h2 class="my-5">Add a new product</h2>
     <div class="row">
       <div class="col col-md-6 offset-md-3">
-        <form onsubmit="handleSubmit(e)">
+        <form onsubmit="handleSubmit(event)">
           <div class="form-group">
             <label for="name">Name</label>
             <input
@@ -75,9 +75,9 @@
             />
           </div>
           <div class="form-group">
-            <label for="image">Image</label>
+            <label for="imageUrl">ImageUrl</label>
             <input
-              id="image"
+              id="imageUrl"
               type="text"
               class="form-control"
               placeholder="Write the image url here"
@@ -120,7 +120,7 @@
         name: document.getElementById("name").value,
         description: document.querySelector("#description").value,
         brand: document.getElementById("brand").value,
-        image: document.getElementById("image").value,
+        imageUrl: document.getElementById("imageUrl").value,
         price: document.querySelector("#price").value,
       };
 
@@ -129,7 +129,6 @@
       try {
         let response = await fetch(url, {
           method: "POST",
-          // POST method is used for CREATING NEW RESOURCES
           body: JSON.stringify(myEvent),
           headers: {
             "Content-Type": "application/json",
