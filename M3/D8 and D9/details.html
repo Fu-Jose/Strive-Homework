@@ -1,8 +1,9 @@
 <html>
     <head>
     <!--
-          
-            You are building the new Amazon.
+            START FROM YESTERDAY'S WORK
+
+             You are building the new Amazon.
             This time you are also responsible for the back office.
 
             THIS is you CRUD endpoint
@@ -36,8 +37,18 @@
 
             Today you have to implement:
 
-            - A backoffice page, where you can insert the product by specifying the parameters
-            - A front page, where the user can see the available products
+            - In the backoffice page
+                a) Add a button and the functionality to EDIT a single product ( PUT  endpoint/{id})
+                b) Add a button and the functionality to DELETE a single product ( DELETE endpoint/{id})
+                c) Add validation to the product creation/edit form
+                d) Display an error message if something goes wrong
+
+            - In the front page
+                a) Add a loader while waiting for the product to load
+                b) Add a link on each item to go to a detail page
+
+            - Create a new detail page where you are going to display the item information
+
 
             ------ N.B. ------
 
@@ -48,7 +59,6 @@
                 "username": "testusername@yourmail.com",
                 "password":"pass"
             }   
-
         --><meta charset="utf-8" />
             <meta
             name="viewport"
@@ -71,7 +81,7 @@
     </style>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="./index.html">Agenda</a>
+            <a class="navbar-brand" href="./index.html">Amazon</a>
             <button
               class="navbar-toggler"
               type="button"
@@ -96,40 +106,81 @@
               </ul>
             </div>
           </nav>
-        <div id="container"></div>>
+        <div class="row">
+            <div id="container" class="col-6 mx-auto d-flex">
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 mx-auto d-flex">
+            <button class="btn btn-success" type="submit" onclick="editP()">
+                EDIT
+            </button>
+            <button class="btn btn-danger" type="submit" onclick="deleteP()">
+                DELETE
+            </button>
+        </div>
+        </div>
     </body>
     <script>
+    
+    const url = "https://striveschool-api.herokuapp.com/api/product/";
         window.onload = async () => {
         console.log("page has been rendered");
-        const url = "https://striveschool-api.herokuapp.com/api/product/";
-        let pagewrapper = document.getElementById("container");
         
-        let response = await fetch(url, {
+        let pagewrapper = document.getElementById("container");
+        let urlParams = new URLSearchParams(window.location.search)
+        console.log(urlParams)
+        let id = urlParams.get("id")
+        console.log(id)
+        console.log(url + id)
+        
+        let response = await fetch(url + id, {
             headers: {
             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDUyMTAwMTg5YzI2ZjAwMTU3ZjljNTciLCJpYXQiOjE2MTU5OTA3ODYsImV4cCI6MTYxNzIwMDM4Nn0.iB1IT2zQKjETNfmxqErhNAC4So3s_iiDL6-WenmxgiA"
             }
           });
-        //   console.log(response);
           let data = await response.json();
           console.log(data);
-        if (data.length > 0) {
-            data.forEach((event) => {
-              let card = document.createElement("div");
+          let card = document.createElement("div");
               card.classList.add(
                 "card",
               );
-              card.innerHTML = `<img src= "${event.imageUrl}" class="card-img-top" alt="...">
+              card.innerHTML = `<img src= "${data.imageUrl}" class="card-img-top" alt="...">
                                     <div class="card-body">
-                                        <h5 class="card-title">${event.name}</h5>
-                                        <p class="card-text">${event.description}</p>
-                                        <a href="#" class="btn btn-primary">${event.price}</a>
+                                        <h5 class="card-title">${data.name}</h5>
+                                        <p class="card-text">${data.description}</p>
+                                        <a href="#" class="btn btn-primary">${data.price}</a>
+                                        <a href="details.html?id=${data._id} "class="btn btn-secondary">Details</a>
                                     </div>`;
               pagewrapper.appendChild(card);
-              console.log(card)
-            });
-          } else {
-            alert("No products to show");
-          }
+              console.log(pagewrapper)
         }
+        const deleteP = async () => {
+            let urlParams = new URLSearchParams(window.location.search);
+            let id = urlParams.get("id");
+            try {
+            let response = await fetch(url + id, {
+                    method: "DELETE" ,
+                    headers: {
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDUyMTAwMTg5YzI2ZjAwMTU3ZjljNTciLCJpYXQiOjE2MTU5OTA3ODYsImV4cCI6MTYxNzIwMDM4Nn0.iB1IT2zQKjETNfmxqErhNAC4So3s_iiDL6-WenmxgiA"
+                    },
+                    
+                });
+            if (response.ok) {
+                alert("product deleted");
+                window.location.assign("index.html");
+            } else {
+                alert("deletion failed");
+            }
+            } catch (error) {
+            console.log(error);
+            }
+      };
+      const editP = () => {
+        let urlParams = new URLSearchParams(window.location.search);
+        let id = urlParams.get("id");
+        window.location.assign("backoffice.html?id=" + id);
+      };
     </script>
 </html>
